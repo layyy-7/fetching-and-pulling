@@ -1,1 +1,31 @@
+Any branch (example master)
+A regular branch reference which I can move around myself
 
+Any remote tracking branch (example origin/master)
+They follow this pattern <remote>/<branch>
+At the time you last communicated with this remote repository, here is where the branch was pointing
+It's a reference to the state of the branch on the remote which I can't move around myself
+It's like a bookmark pointing to last known commit on the branch on origin
+Run git branch -r to view the remote branches our local repository knows about
+
+If I make a new commit locally,
+My local branch reference updates like always
+The remote reference stays the same
+
+To know how did this project look like when I first cloned this repo, you can checkout these remote branch pointers
+For example, use git checkout origin/master for checking out the master branch of remote origin
+
+Once you've cloned a repository, we have all the data and Git history for the project at that moment in time
+However, that does not mean it's all in my workspace
+The github repo has a branch called feature, but when I run git branch I don't see it on my machine
+All I see is the master branch
+
+By default, my master branch is already tracking origin/master
+I didn't connect these myself, it is done automatically
+I want my own local branch called feature and I want it to be connected to origin/feature, just like my local master branch is connected to origin/master
+But this connection is not done automatically
+
+To do this, run git switch <remote-branch-name> to create a new local branch from the remote branch of the same name
+git switch feature makes me a local feature branch AND sets it up to track the remote branch origin/feature
+The new command git switch makes this super easy to do
+It used to be slightly more complicated using git checkout where we need to use git checkout --track origin/feature
