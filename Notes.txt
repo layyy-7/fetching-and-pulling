@@ -26,6 +26,6 @@ I want my own local branch called feature and I want it to be connected to origi
 But this connection is not done automatically
 
 To do this, run git switch <remote-branch-name> to create a new local branch from the remote branch of the same name
-git switch feature makes me a local feature branch AND sets it up to track the remote branch origin/feature
+git switch feature makes me a local feature branch and sets it up to track the remote branch origin/feature
 The new command git switch makes this super easy to do
 It used to be slightly more complicated using git checkout where we need to use git checkout --track origin/feature
